@@ -5,7 +5,7 @@ namespace Soflomo\Purifier\Filter;
 use HTMLPurifier;
 use Zend\Filter\FilterInterface;
 
-class Purifier implements FilterInterface
+class PurifierFilter implements FilterInterface
 {
     protected $purifier;
 
