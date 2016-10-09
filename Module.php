@@ -52,13 +52,13 @@ class Module implements
 {
     public function getAutoloaderConfig()
     {
-        return array(
-            Loader\AutoloaderFactory::STANDARD_AUTOLOADER => array(
-                Loader\StandardAutoloader::LOAD_NS => array(
+        return [
+            Loader\AutoloaderFactory::STANDARD_AUTOLOADER => [
+                Loader\StandardAutoloader::LOAD_NS => [
                     __NAMESPACE__ => __DIR__ . '/src/Soflomo/Purifier',
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
     }
 
     public function getConfig()
@@ -68,34 +68,36 @@ class Module implements
 
     public function getServiceConfig()
     {
-        return array(
-            'factories' => array(
+        return [
+            'factories' => [
                 'HTMLPurifier' => 'Soflomo\Purifier\Factory\HtmlPurifierFactory',
-            ),
-        );
+            ],
+        ];
     }
 
     public function getFilterConfig()
     {
-        return array(
-            'factories' => array(
-                'htmlpurifier' => function($sl) {
-                    $purifier = $sl->getServiceLocator()->get('HTMLPurifier');
+        return [
+            'factories' => [
+                'htmlpurifier' => function ($container) {
+                    $purifier = $container->get('HTMLPurifier');
+
                     return new Filter\Purifier($purifier);
                 },
-            ),
-        );
+            ],
+        ];
     }
 
     public function getViewHelperConfig()
     {
-        return array(
-            'factories' => array(
-                'htmlPurifier' => function($sl) {
-                    $purifier = $sl->getServiceLocator()->get('HTMLPurifier');
+        return [
+            'factories' => [
+                'htmlPurifier' => function ($container) {
+                    $purifier = $container->get('HTMLPurifier');
+
                     return new View\Helper\Purifier($purifier);
                 },
-            ),
-        );
+            ],
+        ];
     }
 }

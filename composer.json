@@ -20,7 +20,9 @@
     ],
     "require": {
         "php": ">=5.3.3.",
-        "ezyang/htmlpurifier": ">=4.5.0"
+        "ezyang/htmlpurifier": ">=4.8.0",
+        "zendframework/zend-filter": "@stable",
+        "zendframework/zend-view": "@stable"
     },
     "autoload": {
         "psr-0": {
