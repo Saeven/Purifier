@@ -2,10 +2,8 @@
 
 namespace Soflomo\Purifier;
 
-use Soflomo\Purifier\Factory\Filter\PurifierFilterFactory;
 use Soflomo\Purifier\Factory\HtmlPurifierFactory;
 use Soflomo\Purifier\Factory\View\Helper\PurifierHelperFactory;
-use Soflomo\Purifier\Filter\PurifierFilter;
 
 return [
 
