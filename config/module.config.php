@@ -20,7 +20,6 @@ return [
     'service_manager' => [
         'factories' => [
             'HTMLPurifierEngine' => HtmlPurifierFactory::class,
-            'CleanHtml' => PurifierFilterFactory::class,
         ],
     ],
 
